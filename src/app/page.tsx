@@ -1,44 +1,44 @@
 const profile = {
-  name: "Your Name",
-  title: "Web Developer / Frontend Engineer",
+  name: "Hoshino Taisei",
+  title: "Student of University of Tsukuba",
   introduction:
-    "ここに自己紹介文を書きます。学習中のこと、得意領域、作りたいものなどを2〜3文でまとめると読みやすいです。",
-  location: "Tokyo, Japan",
-  email: "you@example.com",
-  githubUrl: "https://github.com/yourname",
-  websiteUrl: "https://your-website.com",
-  initials: "YN",
+    "筑波大学情報学群情報メディア創成学類３年、筑波大学お笑い集団DONPAPA代表。主にWebアプリケーションの開発の勉強を行っています。松尾研GCI 2025 Winter修了。atcoder algo茶色(highest 808)",
+  location: "Ibaraki, Japan",
+  email: "hoshino.taisei0329(at)gmail.com",
+  githubUrl: "https://github.com/t-hoshino0329",
+  websiteUrl: "WIP",
+  initials: "HT",
 };
 
 const skills = [
+  "Python",
+  "Flask",
+  "Ruby on Rails",
+  "JavaScript",
   "Next.js",
-  "TypeScript",
-  "React",
-  "Tailwind CSS",
   "Node.js",
-  "Figma",
 ];
 
 const works = [
   {
-    title: "manaba_",
+    title: "manaba_pdf_viewer",
     summary:
-      "学内システムの使いづらさを解消するために、主要な導線を整理したUIを実装。",
+      "manabaのPDF教材をブラウザ上で快適に閲覧できるようにするchrome拡張機能。PDF.jsを活用し実装。",
     role: "企画 / UI設計 / フロント実装",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    link: "https://example.com",
-    repo: "https://github.com/yourname/manaba_",
-    period: "2024",
+    tech: ["JavaScript", "HTML", "PDF.js"],
+    link: "",
+    repo: "https://github.com/t-hoshino0329/Manaba-PDF-Previewer-for-Tsukuba",
+    period: "2025",
   },
   {
     title: "eml_calc",
     summary:
-      "機械学習で使う評価指標を素早く算出できるツールとして設計・実装。",
+      "初等関数を一つの演算子と1との組み合わせで表せるという論文のアイデアに基づいて関数電卓という形で追実装したもの。Pythonで実装。",
     role: "設計 / フロント実装",
-    tech: ["React", "TypeScript", "Vite"],
+    tech: ["Python"],
     link: "",
-    repo: "https://github.com/yourname/eml_calc",
-    period: "2023",
+    repo: "https://github.com/t-hoshino0329/eml_calc",
+    period: "2026",
   },
 ];
 
@@ -72,9 +72,6 @@ export default function Home() {
             {profile.name}
           </h1>
           <p className="text-base text-zinc-500">{profile.title}</p>
-          <p className="max-w-xl text-base leading-7 text-zinc-600">
-            {profile.introduction}
-          </p>
           <div className="flex flex-wrap gap-3 text-sm text-zinc-500">
             {profile.location && <span>📍 {profile.location}</span>}
             {profile.email && <span>✉️ {profile.email}</span>}
@@ -90,16 +87,6 @@ export default function Home() {
                 GitHub
               </a>
             )}
-            {profile.websiteUrl && (
-              <a
-                className="inline-flex items-center justify-center rounded-full border border-zinc-200 px-5 py-2 text-sm font-medium text-zinc-900 transition hover:border-zinc-300 hover:bg-zinc-50"
-                href={profile.websiteUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Website
-              </a>
-            )}
           </div>
         </div>
         <div className="shrink-0">
@@ -113,9 +100,6 @@ export default function Home() {
         <section className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-semibold text-zinc-900">自己紹介</h2>
-            <span className="text-xs text-zinc-400">
-              ここは手動で編集してください
-            </span>
           </div>
           <p className="max-w-3xl text-base leading-7 text-zinc-600">
             {profile.introduction}
@@ -137,7 +121,6 @@ export default function Home() {
         <section className="space-y-6">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-semibold text-zinc-900">開発実績</h2>
-            <span className="text-xs text-zinc-400">成果物は2件に限定</span>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
             {works.map((work) => (
